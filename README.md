@@ -55,7 +55,7 @@ public static void main(String[] args) {
 
 
         switch (answer) {
-            case "ДА" -> {
+            case "ДА" : {
                 System.out.println("Выбери сложность игры(от 1 до 5):");
                 int difficultGame = sc.nextInt();
                 System.out.println("Выбранная сложность:\t" + difficultGame);
