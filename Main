@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Monster {
     private String image = "\uD83E\uDDDF\u200D";
-    private final int x, y;
+    private int x, y;
     Random r = new Random();
 
     Monster(int sizeBoard){
@@ -23,27 +23,28 @@ public class Monster {
         return x;
     }
 
-    public boolean conflictPerson(int perX, int perY){
+    public boolean Person(int perX, int perY){
         return perY - 1 == this.y && perX - 1 == this.x;
     }
 
     public void setImage(String image) {
         this.image = image;
     }
+    public boolean taskMonster(int difficultGame) {
+    System.out.println("Ответь на вопрос: могут ли извергаться вулканы под водой?");
+    System.out.println("Введите 'да' или 'нет':");
+    Scanner sc = new Scanner(System.in);
+    String ans = sc.nextLine();
 
-    public boolean taskMonster(int difficultGame){
-        System.out.println("Решите задачу:");
-        int x = r.nextInt(100);
-        int y = r.nextInt(100);
-        int trueAnswer = x + y;
-        System.out.println("Реши пример: " + x + " + " + y + " = ?");
-        Scanner sc = new Scanner(System.in);
-        int ans = sc.nextInt();
-        if (trueAnswer == ans) {
-            System.out.println("Верно! Ты победил монстра");
-            return true;
-        }
+    if ("да".equals(ans)) {
+        System.out.println("Верно! Ты победил монстра");
+        return true;
+    } else {
         System.out.println("Ты проиграл эту битву!");
         return false;
+    }
+}
+
+
     }
 }
